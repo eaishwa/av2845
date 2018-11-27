@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hist {
+    fill: lightblue;
+    stroke: black;
+    stroke-width: 1;
+    opacity: 1;
+} 
+</style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+
+<svg width="400" height="400" id="mysvg">
+<rect x="90" y="52" width="270" height="50" fill="grey" stroke="white" stroke-width="3" opacity="0.5"/>
+<rect x="90" y="102" width="270" height="50" fill="grey" stroke="white" stroke-width="3" opacity="0.5"/>
+<rect x="90" y="152" width="270" height="50" fill="grey" stroke="white" stroke-width="3" opacity="0.5"/>
+<rect x="90" y="202" width="270" height="50" fill="grey" stroke="white" stroke-width="3" opacity="0.5"/>
+
+  <text x="100" y="270" font-size="16" fill="black">0</text>
+  <rect x="100" y="100" width="50" height="150" class="hist" id="bar1"/>
+  <text x="140" y="270" font-size="16" fill="black">10</text>
+  <rect x="150" y="180" width="50" height="70" class="hist" />
+  <text x="190" y="270" font-size="16" fill="black">20</text>
+  <rect x="200" y="150" width="50" height="100" class="hist" id="bar2"/>
+  <text x="240" y="270" font-size="16" fill="black">30</text>
+  <rect x="250" y="70" width="50" height="180" class="hist" />
+  <text x="290" y="270" font-size="16" fill="black">40</text>
+  <rect x="300" y="130" width="50" height="120" class="hist" />
+  <text x="335" y="270" font-size="16" fill="black">50</text>
+  
+  <text x="80" y="250" font-size="16" fill="black">0</text>
+  <text x="80" y="210" font-size="16" fill="black">2</text>
+  <text x="80" y="165" font-size="16" fill="black">4</text>
+  <text x="80" y="115" font-size="16" fill="black">6</text>
+  <text x="80" y="70" font-size="16" fill="black">8</text>
+  <text x="80" y="300" fill="red" transform="rotate(-90 5,260)">Frequency</text>
+  <text x="190" y="30" font-size="16" fill="black">Histogram</text>
+  
+</svg>
+
+<script>
+d3.selectAll(".hist").style("fill", "lightgreen");
+d3.selectAll("text").style("fill", "blue");
+d3.selectAll(".hist").on("mouseover", function(d) {
+  d3.select(this).style("fill", "orange");
+})                  
+.on("mouseout", function(d) {
+  d3.select(this).style("fill", "lightgreen");
+});
+d3.select("svg").select("#bar1").transition().duration(2000).attr("height","50").attr("y","200");
+d3.select("svg").select("#bar2").transition().duration(2000).attr("height","150").attr("y","100");
+</script>
+</body>
+</html>
