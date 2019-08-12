@@ -1,0 +1,1 @@
+This directory consists of all the applied ML projects I have done so far. It includes regression, classificationa and natural language problems.

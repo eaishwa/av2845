@@ -1,0 +1,1 @@
+This project is about detecting bad comments in reddit posts so that they can be removed. In this, I explore various methods to handle text data such as - tfidf vectorizer, count vectorizer, ngrams, word2vec and glove representations.
